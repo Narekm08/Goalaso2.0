@@ -13,10 +13,18 @@
         <action
             android:id="@+id/action_landing_to_uitslagen"
             app:destination="@id/uitslagen" />
+        <action
+            android:id="@+id/action_landing_to_standen"
+            app:destination="@id/standen" />
     </fragment>
     <fragment
         android:id="@+id/uitslagen"
         android:name="com.example.goalaso.Uitslagen"
         android:label="fragment_uitslagen"
         tools:layout="@layout/fragment_uitslagen" />
+    <fragment
+        android:id="@+id/standen"
+        android:name="com.example.goalaso.standen"
+        android:label="fragment_standen"
+        tools:layout="@layout/fragment_standen" />
 </navigation>
