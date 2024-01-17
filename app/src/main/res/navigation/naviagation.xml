@@ -9,5 +9,14 @@
         android:id="@+id/landing"
         android:name="com.example.goalaso.landing"
         android:label="fragment_landing"
-        tools:layout="@layout/fragment_landing" />
+        tools:layout="@layout/fragment_landing" >
+        <action
+            android:id="@+id/action_landing_to_uitslagen"
+            app:destination="@id/uitslagen" />
+    </fragment>
+    <fragment
+        android:id="@+id/uitslagen"
+        android:name="com.example.goalaso.Uitslagen"
+        android:label="fragment_uitslagen"
+        tools:layout="@layout/fragment_uitslagen" />
 </navigation>
