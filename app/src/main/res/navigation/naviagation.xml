@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_landing_to_standen"
             app:destination="@id/standen" />
+        <action
+            android:id="@+id/action_landing_to_live"
+            app:destination="@id/live" />
     </fragment>
     <fragment
         android:id="@+id/uitslagen"
@@ -27,4 +30,9 @@
         android:name="com.example.goalaso.standen"
         android:label="fragment_standen"
         tools:layout="@layout/fragment_standen" />
+    <fragment
+        android:id="@+id/live"
+        android:name="com.example.goalaso.Live"
+        android:label="fragment_live"
+        tools:layout="@layout/fragment_live" />
 </navigation>
