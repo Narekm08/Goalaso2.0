@@ -33,21 +33,23 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="77dp" />
 
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Eredivisie"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="117dp" />
+
     <LinearLayout
         android:layout_width="409dp"
         android:layout_height="612dp"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="2dp"
         tools:layout_editor_absoluteY="117dp">
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Eredivisie"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-            android:textColor="#FFFFFF"
-            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/textView2"
@@ -156,6 +158,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView" />
+
+        <Button
+            android:id="@+id/btneredivisie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="eredivsie" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
