@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_landing_to_live"
             app:destination="@id/live" />
+        <action
+            android:id="@+id/action_landing_to_standen2"
+            app:destination="@id/standen" />
     </fragment>
     <fragment
         android:id="@+id/uitslagen"
