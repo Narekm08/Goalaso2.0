@@ -22,34 +22,15 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="51dp"
-        android:layout_height="40dp"
-        android:background="#FFFEFE"
-        android:backgroundTint="#272734"
-        android:src="@android:drawable/ic_menu_revert"
-        android:tint="#FFFFFF"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="77dp" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Eredivisie"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="2dp"
-        tools:layout_editor_absoluteY="117dp" />
-
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="409dp"
         android:layout_height="612dp"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="2dp"
-        tools:layout_editor_absoluteY="117dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="2dp">
 
         <TextView
             android:id="@+id/textView2"
@@ -159,11 +140,16 @@
             android:layout_height="wrap_content"
             android:text="TextView" />
 
-        <Button
-            android:id="@+id/btneredivisie"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="eredivsie" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btneredivisie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="eredivsie"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.103"
+        tools:layout_editor_absoluteX="0dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
