@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.TextView
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,7 +36,28 @@ class standen : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_standen, container, false)
+        val view = inflater.inflate(R.layout.fragment_standen, container, false)
+        view.findViewById<Button>(R.id.btneredivisie).setOnClickListener {
+            view.findViewById<TextView>(R.id.textView2).text = "PSV "
+            view.findViewById<TextView>(R.id.textView4).text = "Feyenoord "
+            view.findViewById<TextView>(R.id.textView5).text = "Twente "
+            view.findViewById<TextView>(R.id.textView6).text = "AZ"
+            view.findViewById<TextView>(R.id.textView7).text = "Ajax"
+            view.findViewById<TextView>(R.id.textView8).text = "GA Eagles"
+            view.findViewById<TextView>(R.id.textView9).text = "NEC"
+            view.findViewById<TextView>(R.id.textView10).text = "Sparta Rotterdam"
+            view.findViewById<TextView>(R.id.textView11).text = "PEC"
+            view.findViewById<TextView>(R.id.textView12).text = "Fortuna"
+            view.findViewById<TextView>(R.id.textView13).text = "Excelsior"
+            view.findViewById<TextView>(R.id.textView14).text = "Heerenveen"
+            view.findViewById<TextView>(R.id.textView15).text = "Utrecht"
+            view.findViewById<TextView>(R.id.textView16).text = "Almere"
+            view.findViewById<TextView>(R.id.textView17).text = "Heracles"
+            view.findViewById<TextView>(R.id.textView18).text = "Rkc"
+            view.findViewById<TextView>(R.id.textView19).text = "Volendam"
+            view.findViewById<TextView>(R.id.textView20).text = "Vitesse"
+        }
+        return view
     }
 
     companion object {
