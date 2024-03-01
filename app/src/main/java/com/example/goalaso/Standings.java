@@ -1,9 +1,11 @@
 package com.example.goalaso;
 
+import java.util.ArrayList;
+
 public class Standings {
     private String get;
     Parameters ParametersObject;
-    ArrayList < Object > errors = new ArrayList < Object > ();
+    ArrayList< Object > errors = new ArrayList < Object > ();
     private float results;
     Paging PagingObject;
     ArrayList < Object > response = new ArrayList < Object > ();
