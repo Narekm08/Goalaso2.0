@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.android.volley.AuthFailureError
 import com.android.volley.Response
@@ -43,7 +44,7 @@ class standen : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_standen, container, false)
-    getStanden()
+    getStanden(view)
 
 
 //        view.findViewById<Button>(R.id.btneredivisie).setOnClickListener {
@@ -71,7 +72,7 @@ class standen : Fragment() {
         return view
     }
 
-    fun getStanden() {
+    fun getStanden(view: View) {
         val queue = Volley.newRequestQueue(this.context)
         val url = "https://v3.football.api-sports.io/standings?league=88&season=2023"
         val getRequest: StringRequest = object : StringRequest(
@@ -82,7 +83,7 @@ class standen : Fragment() {
                 val gson = Gson()
             this.standen = gson.fromJson(response, Standings::class.java )
 
-
+            view.findViewById<TextView>(R.id.textView2).text = this.standen.PagingObject.total.toString()
             },
             Response.ErrorListener { error -> // TODO Auto-generated method stub
                 Log.d("ERROR", "error => $error")
