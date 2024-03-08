@@ -11,6 +11,7 @@ import com.android.volley.AuthFailureError
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.example.Example
 import com.google.gson.Gson
 
 
@@ -29,7 +30,7 @@ class standen : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
-    private  lateinit var standen: Standings;
+    private  lateinit var standen: Example;
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -81,9 +82,27 @@ class standen : Fragment() {
                 Log.d("Response", response)
 
                 val gson = Gson()
-            this.standen = gson.fromJson(response, Standings::class.java )
+                this.standen = gson.fromJson(response, Example::class.java )
 
-            view.findViewById<TextView>(R.id.textView2).text = this.standen.PagingObject.total.toString()
+                view.findViewById<TextView>(R.id.pos2).text = this.standen.response[0].league.standings[0][0].team.name
+                view.findViewById<TextView>(R.id.pos3).text = this.standen.response[0].league.standings[0][1].team.name
+                view.findViewById<TextView>(R.id.pos4).text = this.standen.response[0].league.standings[0][2].team.name
+                view.findViewById<TextView>(R.id.pos5).text = this.standen.response[0].league.standings[0][3].team.name
+                view.findViewById<TextView>(R.id.pos6).text = this.standen.response[0].league.standings[0][4].team.name
+                view.findViewById<TextView>(R.id.pos7).text = this.standen.response[0].league.standings[0][5].team.name
+                view.findViewById<TextView>(R.id.pos8).text = this.standen.response[0].league.standings[0][6].team.name
+                view.findViewById<TextView>(R.id.pos9).text = this.standen.response[0].league.standings[0][7].team.name
+                view.findViewById<TextView>(R.id.pos10).text = this.standen.response[0].league.standings[0][8].team.name
+                view.findViewById<TextView>(R.id.pos11).text = this.standen.response[0].league.standings[0][9].team.name
+                view.findViewById<TextView>(R.id.pos12).text = this.standen.response[0].league.standings[0][10].team.name
+                view.findViewById<TextView>(R.id.pos13).text = this.standen.response[0].league.standings[0][11].team.name
+                view.findViewById<TextView>(R.id.pos14).text = this.standen.response[0].league.standings[0][12].team.name
+                view.findViewById<TextView>(R.id.pos15).text = this.standen.response[0].league.standings[0][13].team.name
+                view.findViewById<TextView>(R.id.pos16).text = this.standen.response[0].league.standings[0][14].team.name
+                view.findViewById<TextView>(R.id.pos17).text = this.standen.response[0].league.standings[0][15].team.name
+                view.findViewById<TextView>(R.id.pos18).text = this.standen.response[0].league.standings[0][16].team.name
+                view.findViewById<TextView>(R.id.pos19).text = this.standen.response[0].league.standings[0][17].team.name
+
             },
             Response.ErrorListener { error -> // TODO Auto-generated method stub
                 Log.d("ERROR", "error => $error")

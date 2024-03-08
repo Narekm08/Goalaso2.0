@@ -1,7 +1,6 @@
 
 package com.example.goalaso.api;
 
-import javax.annotation.Generated;
 
 import com.example.Goals;
 import com.google.gson.annotations.Expose;

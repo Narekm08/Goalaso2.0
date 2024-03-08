@@ -1,12 +1,19 @@
 package com.example.goalaso
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import com.android.volley.AuthFailureError
+import com.android.volley.Response
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
+import com.example.Example
+import com.google.gson.Gson
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -22,6 +29,7 @@ class Uitslagen : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private  lateinit var standen: Example;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,8 +44,8 @@ class Uitslagen : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_standen, container, false)
-        //getStanden()
+        val view = inflater.inflate(R.layout.fragment_uitslagen, container, false)
+        getStanden(view)
 
 
 //        view.findViewById<Button>(R.id.btneredivisie).setOnClickListener {
@@ -61,24 +69,38 @@ class Uitslagen : Fragment() {
 
             return view
     }
+    fun getStanden(view: View) {
+        val queue = Volley.newRequestQueue(this.context)
+        val url = "https://v3.football.api-sports.io/standings?league=88&season=2023"
+        val getRequest: StringRequest = object : StringRequest(
+            Method.GET, url,
+            Response.Listener<String?> { response -> // response
+                Log.d("Response", response)
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment Uitslagen.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            Uitslagen().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+                val gson = Gson()
+                this.standen = gson.fromJson(response, Example::class.java )
+
+                view.findViewById<TextView>(R.id.post1).text = this.standen.response[0].league.standings[0][0].team.name
+                view.findViewById<TextView>(R.id.post2).text = this.standen.response[0].league.standings[0][1].team.name
+                view.findViewById<TextView>(R.id.post3).text = this.standen.response[0].league.standings[0][2].team.name
+                view.findViewById<TextView>(R.id.post4).text = this.standen.response[0].league.standings[0][3].team.name
+                view.findViewById<TextView>(R.id.post5).text = this.standen.response[0].league.standings[0][4].team.name
+
+
+            },
+            Response.ErrorListener { error -> // TODO Auto-generated method stub
+                Log.d("ERROR", "error => $error")
             }
+        ) {
+            @Throws(AuthFailureError::class)
+            override fun getHeaders(): Map<String, String> {
+                val params: MutableMap<String, String> = HashMap()
+                params["x-apisports-key"] = "b3747f30c6d3e689f01c8f16888219b1"
+                return params
+            }
+        }
+        queue.add(getRequest)
     }
+
+
 }

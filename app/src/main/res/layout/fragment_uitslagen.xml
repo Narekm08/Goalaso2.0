@@ -31,20 +31,14 @@
         app:layout_constraintEnd_toEndOf="@+id/textView"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="0dp" />
+        tools:layout_editor_absoluteY="16dp" />
 
     <LinearLayout
         android:layout_width="409dp"
         android:layout_height="601dp"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="129dp">
-
-        <Button
-            android:id="@+id/btnUItslageredivisie"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Button" />
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="192dp">
 
         <TextView
             android:id="@+id/textView23"
@@ -53,31 +47,31 @@
             android:text="TextView" />
 
         <TextView
-            android:id="@+id/textView24"
+            android:id="@+id/post1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView" />
 
         <TextView
-            android:id="@+id/textView25"
+            android:id="@+id/post2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView" />
 
         <TextView
-            android:id="@+id/textView26"
+            android:id="@+id/post3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView" />
 
         <TextView
-            android:id="@+id/textView27"
+            android:id="@+id/post4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView" />
 
         <TextView
-            android:id="@+id/textView28"
+            android:id="@+id/post5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView" />
@@ -141,6 +135,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
