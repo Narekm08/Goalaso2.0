@@ -80,12 +80,24 @@ class Uitslagen : Fragment() {
                 val gson = Gson()
                 this.standen = gson.fromJson(response, Example::class.java )
 
-                view.findViewById<TextView>(R.id.post1).text = this.standen.response[0].league.standings[0][0].team.name
-                view.findViewById<TextView>(R.id.post2).text = this.standen.response[0].league.standings[0][1].team.name
-                view.findViewById<TextView>(R.id.post3).text = this.standen.response[0].league.standings[0][2].team.name
-                view.findViewById<TextView>(R.id.post4).text = this.standen.response[0].league.standings[0][3].team.name
-                view.findViewById<TextView>(R.id.post5).text = this.standen.response[0].league.standings[0][4].team.name
-
+                view.findViewById<TextView>(R.id.post1).text = this.standen.response[0].league.standings[0][0].team.name + " Punten: " + this.standen.response[0].league.standings[0][0].points.toString()
+                view.findViewById<TextView>(R.id.post2).text = this.standen.response[0].league.standings[0][1].team.name + " Punten: " + this.standen.response[0].league.standings[0][1].points.toString()
+                view.findViewById<TextView>(R.id.post3).text = this.standen.response[0].league.standings[0][2].team.name + " Punten: " + this.standen.response[0].league.standings[0][2].points.toString()
+                view.findViewById<TextView>(R.id.post4).text = this.standen.response[0].league.standings[0][3].team.name + " Punten: " + this.standen.response[0].league.standings[0][3].points.toString()
+                view.findViewById<TextView>(R.id.post5).text = this.standen.response[0].league.standings[0][4].team.name + " Punten: " + this.standen.response[0].league.standings[0][4].points.toString()
+                view.findViewById<TextView>(R.id.post6).text = this.standen.response[0].league.standings[0][5].team.name + " Punten: " + this.standen.response[0].league.standings[0][5].points.toString()
+                view.findViewById<TextView>(R.id.post7).text = this.standen.response[0].league.standings[0][6].team.name + " Punten: " + this.standen.response[0].league.standings[0][6].points.toString()
+                view.findViewById<TextView>(R.id.post8).text = this.standen.response[0].league.standings[0][7].team.name + " Punten: " + this.standen.response[0].league.standings[0][7].points.toString()
+                view.findViewById<TextView>(R.id.post9).text = this.standen.response[0].league.standings[0][8].team.name + " Punten: " + this.standen.response[0].league.standings[0][8].points.toString()
+                view.findViewById<TextView>(R.id.post10).text = this.standen.response[0].league.standings[0][9].team.name + " Punten: " + this.standen.response[0].league.standings[0][9].points.toString()
+                view.findViewById<TextView>(R.id.post11).text = this.standen.response[0].league.standings[0][10].team.name + " Punten: " + this.standen.response[0].league.standings[0][10].points.toString()
+                view.findViewById<TextView>(R.id.post12).text = this.standen.response[0].league.standings[0][11].team.name + " Punten: " + this.standen.response[0].league.standings[0][11].points.toString()
+                view.findViewById<TextView>(R.id.post13).text = this.standen.response[0].league.standings[0][12].team.name + " Punten: " + this.standen.response[0].league.standings[0][12].points.toString()
+                view.findViewById<TextView>(R.id.post14).text = this.standen.response[0].league.standings[0][13].team.name + " Punten: " + this.standen.response[0].league.standings[0][13].points.toString()
+                view.findViewById<TextView>(R.id.post15).text = this.standen.response[0].league.standings[0][14].team.name + " Punten: " + this.standen.response[0].league.standings[0][14].points.toString()
+                view.findViewById<TextView>(R.id.post16).text = this.standen.response[0].league.standings[0][15].team.name + " Punten: " + this.standen.response[0].league.standings[0][15].points.toString()
+                view.findViewById<TextView>(R.id.post17).text = this.standen.response[0].league.standings[0][16].team.name + " Punten: " + this.standen.response[0].league.standings[0][16].points.toString()
+                view.findViewById<TextView>(R.id.post18).text = this.standen.response[0].league.standings[0][17].team.name + " Punten: " + this.standen.response[0].league.standings[0][17].points.toString()
 
             },
             Response.ErrorListener { error -> // TODO Auto-generated method stub
